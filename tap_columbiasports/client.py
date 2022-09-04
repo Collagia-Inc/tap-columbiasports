@@ -17,13 +17,14 @@ class ColumbiaSportsStream(Stream):
 
     def get_records(self, partition: dict) -> Iterable[dict]:
 
-        # url_base = "https://api-dev.columbia.com/ContentHubExternal/api/external/image/GetSeasonalAssetsBulk"
-        # record = requests.get(
-        #    url_base,
-        #    headers={"Ocp-Apim-Subscription-Key": "e9c1a47a48684093864ad583f0a87770"},
-        # )
-        # data_list = record.json()
+        url_base = "https://api-dev.columbia.com/ContentHubExternal/api/external/image/GetSeasonalAssetsBulk"
+        record = requests.get(
+            url_base,
+            headers={"Ocp-Apim-Subscription-Key": "e9c1a47a48684093864ad583f0a87770"},
+        )
+        data_list = record.json()
         # For Testing use below data
+        """
         data_list = [
             {
                 "styleDescription": "SOREL GO\u2122 COFFEE RUN",
@@ -119,7 +120,7 @@ class ColumbiaSportsStream(Stream):
                     },
                 ],
             },
-        ]
+        ]"""
         for data in data_list:
             yield data
 
