@@ -4,7 +4,7 @@ import requests
 from pathlib import Path
 from typing import Any, Dict, Optional, Union, List, Iterable
 from singer_sdk import Tap, Stream
-
+import os
 
 SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
 
@@ -16,13 +16,14 @@ class ColumbiaSportsStream(Stream):
         super().__init__(tap=tap, name=None, schema=None)
 
     def get_records(self, partition: dict) -> Iterable[dict]:
-
-        url_base = "https://api-dev.columbia.com/ContentHubExternal/api/external/image/GetSeasonalAssetsBulk"
+        url_base = self.config["api_url"]
+        subscription_key = self.config["subscription_key"]
         record = requests.get(
             url_base,
-            headers={"Ocp-Apim-Subscription-Key": "e9c1a47a48684093864ad583f0a87770"},
+            headers={"Ocp-Apim-Subscription-Key": subscription_key},
         )
         data_list = record.json()
+
         # For Testing use below data
         """
         data_list = [
