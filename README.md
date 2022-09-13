@@ -14,6 +14,18 @@ pipx install tap-columbiasports
 
 ## Configuration
 
+Add env configuration for api_url and subscription_key
+
+```bash
+meltano config tap-columbiasports set api_url {api_url}
+
+export TAP_COLUMBIASPORTS_API_URL={api_url}
+
+meltano config tap-columbiasports set subscription_key {subscription_key}
+
+export TAP_COLUMBIASPORTS_SUBSCRIPTION_KEY={subscription_key}
+```
+
 ### Accepted Config Options
 
 - [ ] `Developer TODO:` Provide a list of config options accepted by the tap.
@@ -61,7 +73,12 @@ poetry install
 ### Create and Run Tests
 
 Create tests within the `tap_columbiasports/tests` subfolder and
-  then run:
+<<<<<<< HEAD
+then run:
+=======
+then run:
+
+> > > > > > > temp-branch
 
 ```bash
 poetry run pytest
@@ -102,5 +119,10 @@ meltano elt tap-columbiasports target-jsonl
 
 ### SDK Dev Guide
 
-See the [dev guide](https://sdk.meltano.com/en/latest/dev_guide.html) for more instructions on how to use the SDK to 
-develop your own taps and targets.
+<<<<<<< HEAD
+See the [dev guide](https://sdk.meltano.com/en/latest/dev_guide.html) for more instructions on how to use the SDK to
+=======
+See the [dev guide](https://sdk.meltano.com/en/latest/dev_guide.html) for more instructions on how to use the SDK to
+
+> > > > > > > temp-branch
+> > > > > > > develop your own taps and targets.
