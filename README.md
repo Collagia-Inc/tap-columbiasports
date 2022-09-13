@@ -14,6 +14,18 @@ pipx install tap-columbiasports
 
 ## Configuration
 
+Add env configuration for api_url and subscription_key
+
+```bash
+meltano config tap-columbiasports set api_url {api_url}
+
+export TAP_COLUMBIASPORTS_API_URL={api_url}
+
+meltano config tap-columbiasports set subscription_key {subscription_key}
+
+export TAP_COLUMBIASPORTS_SUBSCRIPTION_KEY={subscription_key}
+```
+
 ### Accepted Config Options
 
 - [ ] `Developer TODO:` Provide a list of config options accepted by the tap.
