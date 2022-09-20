@@ -14,8 +14,8 @@ plugins:
         - discover
       settings:
         - name: api_url
-      config:
-        api_url: test_api_url
+        - name: subscription_key
+
   loaders:
     - name: target-jsonl
       variant: andyh1203
