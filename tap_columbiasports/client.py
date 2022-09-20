@@ -31,7 +31,7 @@ class ColumbiaSportsStream(RESTStream):
     ) -> Dict[str, Any]:
         """Return a dictionary of values to be used in URL parameterization."""
         return {
-            "Perspective": "b",
+            # "Perspective": "b",
             # "colorwayName": "black"
         }
 
