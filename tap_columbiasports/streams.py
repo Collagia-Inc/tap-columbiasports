@@ -18,6 +18,7 @@ class ColumbiaSportsImageDataStream(ColumbiaSportsStream):
 
     name = "columbia-sports-wear"
     path = "/"
+    key_properties = ["fileName"]
     primary_keys = ["fileName"]
     replication_key = "fileName"
     replicaton_method = "INCREMENTAL"
