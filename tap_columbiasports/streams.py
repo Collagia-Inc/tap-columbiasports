@@ -17,7 +17,13 @@ class ColumbiaSportsImageDataStream(ColumbiaSportsStream):
     """Define custom stream."""
 
     name = "columbia-sports-wear"
+    path = "/"
+    primary_keys = ["fileName"]
+    replication_key = "fileName"
+    replicaton_method = "INCREMENTAL"
+
     schema = th.PropertiesList(
+        th.Property("fileName", th.StringType, required=True),
         th.Property("sizeGroup", th.StringType),
         th.Property("styleDescription", th.StringType),
         th.Property("colorwayName", th.StringType),
@@ -31,4 +37,3 @@ class ColumbiaSportsImageDataStream(ColumbiaSportsStream):
             ),
         ),
     ).to_dict()
-    primary_keys = ["identifier"]
